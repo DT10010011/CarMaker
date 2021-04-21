@@ -46,4 +46,8 @@
         android:layout_height="20dp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="64dp" />
+
+    <RelativeLayout
+        android:layout_width=""
+        android:layout_height="" /> // Add ImageViews inside of this RelativeLayout, work from there
 </androidx.constraintlayout.widget.ConstraintLayout>

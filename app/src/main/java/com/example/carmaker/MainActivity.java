@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private Spinner wheelsSpinner;
@@ -53,27 +55,50 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         headlightsSpinner.setAdapter(headlightsAdapter);
         headlightsSpinner.setOnItemSelectedListener(this);
 
+        wheelsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // https://stackoverflow.com/questions/20151414/how-can-i-use-onitemselected-in-android - set drawable values here
+            @Override
+            // ImageView image = (ImageView) findViewById(R.id.frame);
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                switch (position) {
+                    case 0:
+                        Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        Toast.makeText(parent.getContext(), "Spinner item 2!", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 2:
+                        Toast.makeText(parent.getContext(), "Spinner item 3!", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+                //
+            }
+        });
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+    // @Override
+    // public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
 
-        switch (position) {
-            case 0:
+        // switch (position) {// case 0:
                 // Whatever you want to happen when the first item gets selected
-                break;
-            case 1:
+                // break;
+            // case 1:
                 // Whatever you want to happen when the second item gets selected
-                break;
-            case 2:
+                // break;
+            // case 2:
                 // Whatever you want to happen when the thrid item gets selected
-                break;
+                // break;
 
-        }
-    }
+        // }
+    // }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
+    // @Override
+    // public void onNothingSelected(AdapterView<?> parent) {
         // TODO Auto-generated method stub
-    }
+    // }
 }

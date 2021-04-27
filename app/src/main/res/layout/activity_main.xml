@@ -57,19 +57,26 @@
         app:layout_constraintTop_toBottomOf="@+id/frameSpinner">
 
         <ImageView
-            android:id="@+id/blueCar"
+            android:id="@+id/frame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:srcCompat="@drawable/hondacivicframebluecropped" />
+            app:srcCompat="@drawable/hondacivicframeredcropped" />
 
         <ImageView
-            android:id="@+id/wheels1"
+            android:id="@+id/wheels"
             android:layout_width="wrap_content"
-            android:layout_height="399dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             app:srcCompat="@drawable/hondacivicwheels1cropped" />
-        <!-- -->
+
+        <ImageView
+            android:id="@+id/windows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:srcCompat="@drawable/hondacivicwindowsnormalcropped" />
+        <!-- comment -->
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

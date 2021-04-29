@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private static final String[] frameOpt = {"Red", "Blue", "Gray"};
     private static final String[] windowOpt = {"Clear", "Light", "Dark"};
     private static final String[] headlightOpt = {"Clear", "Light", "Dark"};
+    // private Object View;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -55,50 +56,50 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         headlightsSpinner.setAdapter(headlightsAdapter);
         headlightsSpinner.setOnItemSelectedListener(this);
 
-        wheelsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // https://stackoverflow.com/questions/20151414/how-can-i-use-onitemselected-in-android - set drawable values here
-            @Override
-            // ImageView image = (ImageView) findViewById(R.id.frame);
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+         wheelsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // https://stackoverflow.com/questions/20151414/how-can-i-use-onitemselected-in-android - set drawable values here
 
-                switch (position) {
-                    case 0:
-                        Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 1:
-                        Toast.makeText(parent.getContext(), "Spinner item 2!", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 2:
-                        Toast.makeText(parent.getContext(), "Spinner item 3!", Toast.LENGTH_SHORT).show();
-                        break;
-                }
-            }
+             ImageView image = (ImageView) findViewById(R.id.frame);
+             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+                 switch (position) {
+                     case 0:
+                         Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
+                         break;
+                     case 1:
+                         Toast.makeText(parent.getContext(), "Spinner item 2!", Toast.LENGTH_SHORT).show();
+                         break;
+                     case 2:
+                         Toast.makeText(parent.getContext(), "Spinner item 3!", Toast.LENGTH_SHORT).show();
+                         break;
+                 }
+             }
 
-                //
-            }
-        });
+             @Override
+             public void onNothingSelected(AdapterView<?> parent) {
+
+
+             }
+         });
+     }
+
+     @Override
+    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+
+        switch (position) {
+            case 0:
+                // Whatever you want to happen when the first item gets selected
+                break;
+            case 1:
+                // Whatever you want to happen when the second item gets selected
+                break;
+            case 2:
+                // Whatever you want to happen when the thrid item gets selected
+                break;
+        }
     }
 
     // @Override
-    // public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-
-        // switch (position) {// case 0:
-                // Whatever you want to happen when the first item gets selected
-                // break;
-            // case 1:
-                // Whatever you want to happen when the second item gets selected
-                // break;
-            // case 2:
-                // Whatever you want to happen when the thrid item gets selected
-                // break;
-
-        // }
-    // }
-
-    // @Override
-    // public void onNothingSelected(AdapterView<?> parent) {
+    public void onNothingSelected(AdapterView<?> parent) {
         // TODO Auto-generated method stub
-    // }
+    }
 }

@@ -58,18 +58,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
          wheelsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // https://stackoverflow.com/questions/20151414/how-can-i-use-onitemselected-in-android - set drawable values here
 
-             ImageView image = (ImageView) findViewById(R.id.frame);
+             ImageView image = (ImageView) findViewById(R.id.wheels);
              public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                  switch (position) {
                      case 0:
-                         Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
+                         // Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
+                         image.setBackgroundResource(R.drawable.hondacivicwheels1cropped);
                          break;
                      case 1:
-                         Toast.makeText(parent.getContext(), "Spinner item 2!", Toast.LENGTH_SHORT).show();
+                         image.setBackgroundResource(R.drawable.hondacivicwheels2cropped);
                          break;
                      case 2:
-                         Toast.makeText(parent.getContext(), "Spinner item 3!", Toast.LENGTH_SHORT).show();
+                         image.setBackgroundResource(R.drawable.hondacivicwheels3cropped);
                          break;
                  }
              }

@@ -16,15 +16,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Spinner windowsSpinner;
     private Spinner headlightsSpinner;
     private static final String[] wheelOpt = {"Texture 1", "Texture 2", "Texture 3"};
-    private static final String[] frameOpt = {"Red", "Blue", "Gray"};
-    private static final String[] windowOpt = {"Clear", "Light", "Dark"};
+    private static final String[] frameOpt = {"Red", "Green", "Blue"};
+    private static final String[] windowOpt = {"Medium", "Dark", "Very Dark"};
     private static final String[] headlightOpt = {"Clear", "Light", "Dark"};
     // private Object View;
+
+    public static ImageView imageWheels;
+    public static ImageView imageFrame;
+    public static ImageView imageWindows;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        imageWheels = (ImageView) findViewById(R.id.wheels);
+        imageFrame = (ImageView) findViewById(R.id.frame);
+        imageWindows = (ImageView) findViewById(R.id.windows);
 
         // Separate spinners
         wheelsSpinner = (Spinner)findViewById(R.id.wheelsSpinner);
@@ -58,19 +65,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
          wheelsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // https://stackoverflow.com/questions/20151414/how-can-i-use-onitemselected-in-android - set drawable values here
 
-             ImageView image = (ImageView) findViewById(R.id.wheels);
              public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                  switch (position) {
+//                     case 0:
+//                         break;
                      case 0:
-                         // Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
-                         image.setBackgroundResource(R.drawable.hondacivicwheels1cropped);
+//                         Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
+                         imageWheels.setBackgroundResource(R.drawable.hondacivicwheels1cropped);
                          break;
                      case 1:
-                         image.setBackgroundResource(R.drawable.hondacivicwheels2cropped);
+                         imageWheels.setBackgroundResource(R.drawable.hondacivicwheels2cropped);
                          break;
                      case 2:
-                         image.setBackgroundResource(R.drawable.hondacivicwheels3cropped);
+                         imageWheels.setBackgroundResource(R.drawable.hondacivicwheels3cropped);
                          break;
                  }
              }
@@ -81,6 +89,60 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
              }
          });
+
+        frameSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // https://stackoverflow.com/questions/20151414/how-can-i-use-onitemselected-in-android - set drawable values here
+
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                switch (position) {
+//                     case 0:
+//                         break;
+                    case 0:
+//                         Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
+                        imageFrame.setBackgroundResource(R.drawable.hondacivicframeredcropped);
+                        break;
+                    case 1:
+                        imageFrame.setBackgroundResource(R.drawable.hondacivicframegreencropped);
+                        break;
+                    case 2:
+                        imageFrame.setBackgroundResource(R.drawable.hondacivicframebluecropped);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+
+            }
+        });
+
+        windowsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // https://stackoverflow.com/questions/20151414/how-can-i-use-onitemselected-in-android - set drawable values here
+
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                switch (position) {
+//                     case 0:
+//                         break;
+                    case 0:
+//                         Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
+                        imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsnormalcropped);
+                        break;
+                    case 1:
+                        imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsdarkcropped);
+                        break;
+                    case 2:
+                        imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsverydarkcropped);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+
+            }
+        });
      }
 
      @Override

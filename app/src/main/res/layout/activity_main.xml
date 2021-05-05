@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameSpinner">
-        //
+
 <!--        <FrameLayout-->
 <!--            android:id="@+id/frame"-->
 <!--            android:layout_width="wrap_content"-->
@@ -69,31 +69,31 @@
 <!--                android:layout_alignParentBottom="true"-->
 <!--                app:srcCompat="@drawable/hondacivicwheels1cropped" />-->
 <!--        </FrameLayout>-->
-        //
+
         <ImageView
             android:id="@+id/frame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:srcCompat="@drawable/hondacivicframeredcropped" />
+            app:srcCompat="@drawable/hondacivicblank" />
 
         <ImageView
             android:id="@+id/windows"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:srcCompat="@drawable/hondacivicwindowsnormalcropped" />
+            app:srcCompat="@drawable/hondacivicblank" />
 
         <ImageView
             android:id="@+id/wheels"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/hondacivicwheels1cropped"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="285dp" />
+            android:layout_alignParentBottom="true"
+            app:srcCompat="@drawable/hondacivicblank" />
+
     </RelativeLayout>
 
-<!--    <ImageView-->
+    <!--    <ImageView-->
 <!--        android:id="@+id/wheels"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->

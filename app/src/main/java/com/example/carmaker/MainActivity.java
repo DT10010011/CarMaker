@@ -37,15 +37,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         wheelsSpinner = (Spinner)findViewById(R.id.wheelsSpinner);
         frameSpinner = (Spinner)findViewById(R.id.frameSpinner);
         windowsSpinner = (Spinner)findViewById(R.id.windowsSpinner);
-        headlightsSpinner = (Spinner)findViewById(R.id.headlightsSpinner);
+        // headlightsSpinner = (Spinner)findViewById(R.id.headlightsSpinner);
         ArrayAdapter<String> wheelsAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_spinner_item,wheelOpt);
         ArrayAdapter<String> frameAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_spinner_item,frameOpt);
         ArrayAdapter<String> windowsAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_spinner_item,windowOpt);
-        ArrayAdapter<String> headlightsAdapter = new ArrayAdapter<String>(MainActivity.this,
-                android.R.layout.simple_spinner_item,headlightOpt);
 
         wheelsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         wheelsSpinner.setAdapter(wheelsAdapter);
@@ -58,10 +56,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         windowsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         windowsSpinner.setAdapter(windowsAdapter);
         windowsSpinner.setOnItemSelectedListener(this);
-
-        headlightsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        headlightsSpinner.setAdapter(headlightsAdapter);
-        headlightsSpinner.setOnItemSelectedListener(this);
 
          wheelsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // https://stackoverflow.com/questions/20151414/how-can-i-use-onitemselected-in-android - set drawable values here
 

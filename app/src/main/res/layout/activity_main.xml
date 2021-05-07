@@ -5,14 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentBottom="true"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/slot"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginBottom="300dp"
+        android:height="30dp"
+        android:background="#DADADA"
+        android:gravity="center"
+        android:shadowColor="#FFFFFF"
+        android:text="SLOT 2"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/slot2"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:height="30dp"
+        android:background="#D2D2D2"
+        android:gravity="center"
+        android:shadowColor="#FFFFFF"
+        android:text="SLOT 3"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/slot"
+        app:layout_constraintTop_toBottomOf="@+id/slot">
+    </TextView>
 
     <Spinner
         android:id="@+id/wheelsSpinner"
         android:layout_width="94dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="84dp"
         android:dropDownVerticalOffset="50dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,31 +55,119 @@
         android:id="@+id/frameSpinner"
         android:layout_width="94dp"
         android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="84dp"
         android:dropDownVerticalOffset="50dp"
         app:layout_constraintStart_toEndOf="@+id/wheelsSpinner"
-        app:layout_constraintTop_toTopOf="@+id/wheelsSpinner" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/windowsSpinner"
         android:layout_width="94dp"
         android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="84dp"
         android:dropDownVerticalOffset="50dp"
         app:layout_constraintStart_toEndOf="@+id/frameSpinner"
-        app:layout_constraintTop_toTopOf="@+id/frameSpinner" />
-
-    <Spinner
-        android:id="@+id/headlightsSpinner"
-        android:layout_width="95dp"
-        android:layout_height="60dp"
-        android:dropDownVerticalOffset="50dp"
-        app:layout_constraintStart_toEndOf="@+id/windowsSpinner"
-        app:layout_constraintTop_toTopOf="@+id/windowsSpinner" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="95dp"
         android:layout_height="20dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="64dp" />
+        android:gravity="center"
+        android:text="Wheels"
+        app:layout_constraintBottom_toTopOf="@+id/wheelsSpinner"
+        app:layout_constraintStart_toStartOf="@+id/wheelsSpinner" />
+
+    <TextView
+        android:layout_width="95dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="Frame"
+        app:layout_constraintBottom_toTopOf="@+id/frameSpinner"
+        app:layout_constraintStart_toStartOf="@+id/frameSpinner" />
+
+    <TextView
+        android:layout_width="95dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="Windows"
+        app:layout_constraintBottom_toTopOf="@+id/windowsSpinner"
+        app:layout_constraintStart_toStartOf="@+id/windowsSpinner" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#F4F4F4"
+        android:gravity="center"
+        android:text="Save"
+        app:layout_constraintStart_toEndOf="@+id/slot1"
+        app:layout_constraintTop_toTopOf="@+id/slot1" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#F4F4F4"
+        android:gravity="center"
+        android:text="Save"
+        app:layout_constraintStart_toEndOf="@+id/slot"
+        app:layout_constraintTop_toTopOf="@+id/slot" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#F4F4F4"
+        android:gravity="center"
+        android:text="Save"
+        app:layout_constraintStart_toEndOf="@+id/slot2"
+        app:layout_constraintTop_toBottomOf="@+id/slot" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="#EBEBEB"
+        android:gravity="center"
+        android:text="Open"
+        app:layout_constraintBottom_toBottomOf="@+id/slot1"
+        app:layout_constraintStart_toEndOf="@+id/slot1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="#EBEBEB"
+        android:gravity="center"
+        android:text="Open"
+        app:layout_constraintBottom_toBottomOf="@+id/slot"
+        app:layout_constraintStart_toEndOf="@+id/slot" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="#EBEBEB"
+        android:gravity="center"
+        android:text="Open"
+        app:layout_constraintBottom_toBottomOf="@+id/slot2"
+        app:layout_constraintStart_toEndOf="@+id/slot2" />
+
+    <TextView
+        android:id="@+id/slot1"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:height="30dp"
+        android:background="#D2D2D2"
+        android:gravity="center"
+        android:shadowColor="#FFFFFF"
+        android:text="SLOT 1"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/slot"
+        app:layout_constraintStart_toStartOf="@+id/slot" />
 
     <RelativeLayout
         android:layout_width="399dp"
@@ -56,19 +177,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameSpinner">
 
-<!--        <FrameLayout-->
-<!--            android:id="@+id/frame"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignParentBottom="true"-->
-<!--            app:srcCompat="@drawable/hondacivicframeredcropped" >-->
-<!--            <ImageView-->
-<!--                android:id="@+id/wheels"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_alignParentBottom="true"-->
-<!--                app:srcCompat="@drawable/hondacivicwheels1cropped" />-->
-<!--        </FrameLayout>-->
+        <!--        <FrameLayout-->
+        <!--            android:id="@+id/frame"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            app:srcCompat="@drawable/hondacivicframeredcropped" >-->
+        <!--            <ImageView-->
+        <!--                android:id="@+id/wheels"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_alignParentBottom="true"-->
+        <!--                app:srcCompat="@drawable/hondacivicwheels1cropped" />-->
+        <!--        </FrameLayout>-->
 
         <ImageView
             android:id="@+id/frame"
@@ -94,11 +215,11 @@
     </RelativeLayout>
 
     <!--    <ImageView-->
-<!--        android:id="@+id/wheels"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:srcCompat="@drawable/hondacivicwheels1cropped"-->
-<!--        tools:layout_editor_absoluteX="16dp"-->
-<!--        tools:layout_editor_absoluteY="285dp" />-->
+    <!--        android:id="@+id/wheels"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:srcCompat="@drawable/hondacivicwheels1cropped"-->
+    <!--        tools:layout_editor_absoluteX="16dp"-->
+    <!--        tools:layout_editor_absoluteY="285dp" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

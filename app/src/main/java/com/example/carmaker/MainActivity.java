@@ -14,16 +14,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Spinner wheelsSpinner;
     private Spinner frameSpinner;
     private Spinner windowsSpinner;
-    private Spinner headlightsSpinner;
+    // private Spinner headlightsSpinner;
     private static final String[] wheelOpt = {"Texture 1", "Texture 2", "Texture 3"};
     private static final String[] frameOpt = {"Red", "Green", "Blue"};
     private static final String[] windowOpt = {"Medium", "Dark", "Very Dark"};
-    private static final String[] headlightOpt = {"Clear", "Light", "Dark"};
+    // private static final String[] headlightOpt = {"Clear", "Light", "Dark"};
     // private Object View;
 
     public static ImageView imageWheels;
     public static ImageView imageFrame;
     public static ImageView imageWindows;
+
+    private int[] slot1Indices = {0, 0, 0};
+    private int[] slot2Indices = {0, 0, 0};
+    private int[] slot3Indices = {0, 0, 0};
+    private int wheelsNum = 0;
+    private int frameNum = 0;
+    private int windowsNum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -67,12 +74,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                      case 0:
 //                         Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
                          imageWheels.setBackgroundResource(R.drawable.hondacivicwheels1cropped);
+                         wheelsNum = 0;
                          break;
                      case 1:
                          imageWheels.setBackgroundResource(R.drawable.hondacivicwheels2cropped);
+                         wheelsNum = 1;
                          break;
                      case 2:
                          imageWheels.setBackgroundResource(R.drawable.hondacivicwheels3cropped);
+                         wheelsNum = 2;
                          break;
                  }
              }
@@ -94,12 +104,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     case 0:
 //                         Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
                         imageFrame.setBackgroundResource(R.drawable.hondacivicframeredcropped);
+                        frameNum = 0;
                         break;
                     case 1:
                         imageFrame.setBackgroundResource(R.drawable.hondacivicframegreencropped);
+                        frameNum = 1;
                         break;
                     case 2:
                         imageFrame.setBackgroundResource(R.drawable.hondacivicframebluecropped);
+                        frameNum = 2;
                         break;
                 }
             }
@@ -121,12 +134,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     case 0:
 //                         Toast.makeText(parent.getContext(), "Spinner item 1!", Toast.LENGTH_SHORT).show();
                         imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsnormalcropped);
+                        windowsNum = 0;
                         break;
                     case 1:
                         imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsdarkcropped);
+                        windowsNum = 1;
                         break;
                     case 2:
                         imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsverydarkcropped);
+                        windowsNum = 2;
                         break;
                 }
             }
@@ -158,5 +174,77 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     // @Override
     public void onNothingSelected(AdapterView<?> parent) {
         // TODO Auto-generated method stub
+    }
+
+    public void saveToSlot1(View v) {
+        slot1Indices[0] = wheelsNum;
+        slot1Indices[1] = frameNum;
+        slot1Indices[2] = windowsNum;
+    }
+
+    public void saveToSlot2(View v) {
+        slot2Indices[0] = wheelsNum;
+        slot2Indices[1] = frameNum;
+        slot2Indices[2] = windowsNum;
+    }
+
+    public void saveToSlot3(View v) {
+        slot3Indices[0] = wheelsNum;
+        slot3Indices[1] = frameNum;
+        slot3Indices[2] = windowsNum;
+    }
+
+    public void openFromSlot1(View v) {
+        wheelsNum = slot1Indices[0];
+        frameNum = slot1Indices[1];
+        windowsNum = slot1Indices[2];
+
+        if (wheelsNum == 0) imageWheels.setBackgroundResource(R.drawable.hondacivicwheels1cropped);
+        if (wheelsNum == 1) imageWheels.setBackgroundResource(R.drawable.hondacivicwheels2cropped);
+        if (wheelsNum == 2) imageWheels.setBackgroundResource(R.drawable.hondacivicwheels3cropped);
+
+        if (frameNum == 0) imageFrame.setBackgroundResource(R.drawable.hondacivicframeredcropped);
+        if (frameNum == 1) imageFrame.setBackgroundResource(R.drawable.hondacivicframegreencropped);
+        if (frameNum == 2) imageFrame.setBackgroundResource(R.drawable.hondacivicframebluecropped);
+
+        if (windowsNum == 0) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsnormalcropped);
+        if (windowsNum == 1) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsdarkcropped);
+        if (windowsNum == 2) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsverydarkcropped);
+    }
+
+    public void openFromSlot2(View v) {
+        wheelsNum = slot2Indices[0];
+        frameNum = slot2Indices[1];
+        windowsNum = slot2Indices[2];
+
+        if (wheelsNum == 0) imageWheels.setBackgroundResource(R.drawable.hondacivicwheels1cropped);
+        if (wheelsNum == 1) imageWheels.setBackgroundResource(R.drawable.hondacivicwheels2cropped);
+        if (wheelsNum == 2) imageWheels.setBackgroundResource(R.drawable.hondacivicwheels3cropped);
+
+        if (frameNum == 0) imageFrame.setBackgroundResource(R.drawable.hondacivicframeredcropped);
+        if (frameNum == 1) imageFrame.setBackgroundResource(R.drawable.hondacivicframegreencropped);
+        if (frameNum == 2) imageFrame.setBackgroundResource(R.drawable.hondacivicframebluecropped);
+
+        if (windowsNum == 0) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsnormalcropped);
+        if (windowsNum == 1) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsdarkcropped);
+        if (windowsNum == 2) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsverydarkcropped);
+    }
+
+    public void openFromSlot3(View v) {
+        wheelsNum = slot3Indices[0];
+        frameNum = slot3Indices[1];
+        windowsNum = slot3Indices[2];
+
+        if (wheelsNum == 0) imageWheels.setBackgroundResource(R.drawable.hondacivicwheels1cropped);
+        if (wheelsNum == 1) imageWheels.setBackgroundResource(R.drawable.hondacivicwheels2cropped);
+        if (wheelsNum == 2) imageWheels.setBackgroundResource(R.drawable.hondacivicwheels3cropped);
+
+        if (frameNum == 0) imageFrame.setBackgroundResource(R.drawable.hondacivicframeredcropped);
+        if (frameNum == 1) imageFrame.setBackgroundResource(R.drawable.hondacivicframegreencropped);
+        if (frameNum == 2) imageFrame.setBackgroundResource(R.drawable.hondacivicframebluecropped);
+
+        if (windowsNum == 0) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsnormalcropped);
+        if (windowsNum == 1) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsdarkcropped);
+        if (windowsNum == 2) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsverydarkcropped);
     }
 }

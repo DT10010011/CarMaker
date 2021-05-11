@@ -14,7 +14,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="92dp"
         android:layout_marginLeft="92dp"
-        android:layout_marginBottom="300dp"
+        android:layout_marginBottom="196dp"
         android:height="30dp"
         android:background="#DADADA"
         android:gravity="center"
@@ -103,6 +103,7 @@
         android:layout_height="20dp"
         android:background="#F4F4F4"
         android:gravity="center"
+        android:onClick="saveToSlot1"
         android:text="Save"
         app:layout_constraintStart_toEndOf="@+id/slot1"
         app:layout_constraintTop_toTopOf="@+id/slot1" />
@@ -113,6 +114,7 @@
         android:layout_height="20dp"
         android:background="#F4F4F4"
         android:gravity="center"
+        android:onClick="saveToSlot2"
         android:text="Save"
         app:layout_constraintStart_toEndOf="@+id/slot"
         app:layout_constraintTop_toTopOf="@+id/slot" />
@@ -123,6 +125,7 @@
         android:layout_height="20dp"
         android:background="#F4F4F4"
         android:gravity="center"
+        android:onClick="saveToSlot3"
         android:text="Save"
         app:layout_constraintStart_toEndOf="@+id/slot2"
         app:layout_constraintTop_toBottomOf="@+id/slot" />
@@ -132,6 +135,7 @@
         android:layout_height="30dp"
         android:background="#EBEBEB"
         android:gravity="center"
+        android:onClick="openFromSlot1"
         android:text="Open"
         app:layout_constraintBottom_toBottomOf="@+id/slot1"
         app:layout_constraintStart_toEndOf="@+id/slot1" />
@@ -142,6 +146,7 @@
         android:layout_height="30dp"
         android:background="#EBEBEB"
         android:gravity="center"
+        android:onClick="openFromSlot2"
         android:text="Open"
         app:layout_constraintBottom_toBottomOf="@+id/slot"
         app:layout_constraintStart_toEndOf="@+id/slot" />
@@ -152,6 +157,7 @@
         android:layout_height="30dp"
         android:background="#EBEBEB"
         android:gravity="center"
+        android:onClick="openFromSlot3"
         android:text="Open"
         app:layout_constraintBottom_toBottomOf="@+id/slot2"
         app:layout_constraintStart_toEndOf="@+id/slot2" />

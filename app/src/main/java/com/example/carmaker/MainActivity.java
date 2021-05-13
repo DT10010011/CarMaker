@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -24,6 +25,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public static ImageView imageWheels;
     public static ImageView imageFrame;
     public static ImageView imageWindows;
+    public static TextView info;
+    public static TextView slot1Icon;
+    public static TextView slot1SaveButton;
+    public static TextView slot1OpenButton;
+    public static TextView slot2Icon;
+    public static TextView slot2SaveButton;
+    public static TextView slot2OpenButton;
+    public static TextView slot3Icon;
+    public static TextView slot3SaveButton;
+    public static TextView slot3OpenButton;
 
     private int[] slot1Indices = {0, 0, 0};
     private int[] slot2Indices = {0, 0, 0};
@@ -31,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private int wheelsNum = 0;
     private int frameNum = 0;
     private int windowsNum = 0;
+    public int pageNum = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -39,6 +51,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         imageWheels = (ImageView) findViewById(R.id.wheels);
         imageFrame = (ImageView) findViewById(R.id.frame);
         imageWindows = (ImageView) findViewById(R.id.windows);
+        info = (TextView) findViewById(R.id.info);
+        slot1Icon = (TextView) findViewById(R.id.slot1);
+        slot1SaveButton = (TextView) findViewById(R.id.textView);
+        slot1OpenButton = (TextView) findViewById(R.id.textView6); // Mixed up text view names by accident (1, 6, 4, 2, 5, 3, respectfully) and non-buttons are called "slot1", "slot" and "slot2"
+        slot2Icon = (TextView) findViewById(R.id.slot);
+        slot2SaveButton = (TextView) findViewById(R.id.textView4);
+        slot2OpenButton = (TextView) findViewById(R.id.textView2);
+        slot3Icon = (TextView) findViewById(R.id.slot2);
+        slot3SaveButton = (TextView) findViewById(R.id.textView5);
+        slot3OpenButton = (TextView) findViewById(R.id.textView3);
 
         // Separate spinners
         wheelsSpinner = (Spinner)findViewById(R.id.wheelsSpinner);
@@ -246,5 +268,45 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (windowsNum == 0) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsnormalcropped);
         if (windowsNum == 1) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsdarkcropped);
         if (windowsNum == 2) imageWindows.setBackgroundResource(R.drawable.hondacivicwindowsverydarkcropped);
+    }
+
+    public void switchPage(View v) {
+//        imageWheels.setVisibility(View.INVISIBLE);
+//        imageFrame.setVisibility(View.INVISIBLE);
+//        imageWindows.setVisibility(View.INVISIBLE);
+
+
+        if (pageNum == 1) {
+            imageWheels.setVisibility(View.INVISIBLE);
+            imageFrame.setVisibility(View.INVISIBLE);
+            imageWindows.setVisibility(View.INVISIBLE);
+            slot1Icon.setVisibility(View.INVISIBLE);
+            slot1SaveButton.setVisibility(View.INVISIBLE);
+            slot1OpenButton.setVisibility(View.INVISIBLE);
+            slot2Icon.setVisibility(View.INVISIBLE);
+            slot2SaveButton.setVisibility(View.INVISIBLE);
+            slot2OpenButton.setVisibility(View.INVISIBLE);
+            slot3Icon.setVisibility(View.INVISIBLE);
+            slot3SaveButton.setVisibility(View.INVISIBLE);
+            slot3OpenButton.setVisibility(View.INVISIBLE);
+            info.setVisibility(View.VISIBLE);
+            pageNum = 2;
+        }
+        else {
+            imageWheels.setVisibility(View.VISIBLE);
+            imageFrame.setVisibility(View.VISIBLE);
+            imageWindows.setVisibility(View.VISIBLE);
+            slot1Icon.setVisibility(View.VISIBLE);
+            slot1SaveButton.setVisibility(View.VISIBLE);
+            slot1OpenButton.setVisibility(View.VISIBLE);
+            slot2Icon.setVisibility(View.VISIBLE);
+            slot2SaveButton.setVisibility(View.VISIBLE);
+            slot2OpenButton.setVisibility(View.VISIBLE);
+            slot3Icon.setVisibility(View.VISIBLE);
+            slot3SaveButton.setVisibility(View.VISIBLE);
+            slot3OpenButton.setVisibility(View.VISIBLE);
+            info.setVisibility(View.INVISIBLE);
+            pageNum = 1;
+        }
     }
 }

@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Spinner frameSpinner;
     private Spinner windowsSpinner;
     // private Spinner headlightsSpinner;
-    private static final String[] wheelOpt = {"Texture 1", "Texture 2", "Texture 3"};
+    private static final String[] wheelOpt = {"Texture 1 (Tenth Generation)", "Texture 2 (Eighth Generation)", "Texture 3 (Second Generation)"};
     private static final String[] frameOpt = {"Red", "Green", "Blue"};
     private static final String[] windowOpt = {"Medium", "Dark", "Very Dark"};
     // private static final String[] headlightOpt = {"Clear", "Light", "Dark"};
@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public static TextView slot3Icon;
     public static TextView slot3SaveButton;
     public static TextView slot3OpenButton;
+    public static TextView wheelsSpinnerLabel;
+    public static TextView frameSpinnerLabel;
+    public static TextView windowsSpinnerLabel;
+    public static ImageView road;
 
     private int[] slot1Indices = {0, 0, 0};
     private int[] slot2Indices = {0, 0, 0};
@@ -61,6 +65,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         slot3Icon = (TextView) findViewById(R.id.slot2);
         slot3SaveButton = (TextView) findViewById(R.id.textView5);
         slot3OpenButton = (TextView) findViewById(R.id.textView3);
+        wheelsSpinnerLabel = (TextView) findViewById(R.id.wheelsSpinnerLabel);
+        frameSpinnerLabel = (TextView) findViewById(R.id.frameSpinnerLabel);
+        windowsSpinnerLabel = (TextView) findViewById(R.id.windowsSpinnerLabel);
+        road = (ImageView) findViewById(R.id.road);
 
         // Separate spinners
         wheelsSpinner = (Spinner)findViewById(R.id.wheelsSpinner);
@@ -202,18 +210,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         slot1Indices[0] = wheelsNum;
         slot1Indices[1] = frameNum;
         slot1Indices[2] = windowsNum;
+        updateInfo();
     }
 
     public void saveToSlot2(View v) {
         slot2Indices[0] = wheelsNum;
         slot2Indices[1] = frameNum;
         slot2Indices[2] = windowsNum;
+        updateInfo();
     }
 
     public void saveToSlot3(View v) {
         slot3Indices[0] = wheelsNum;
         slot3Indices[1] = frameNum;
         slot3Indices[2] = windowsNum;
+        updateInfo();
+    }
+
+    public void updateInfo() {
+        info.setText("INFORMATION\n\n   Slot 1\n      Wheel type: " + wheelOpt[slot1Indices[0]] + "\n      Frame color: " + frameOpt[slot1Indices[1]] + "\n      Window shade: " + windowOpt[slot1Indices[2]] + "\n\n   Slot 2\n      Wheel type: " + wheelOpt[slot2Indices[0]] + "\n      Frame color: " + frameOpt[slot2Indices[1]] + "\n      Window shade: " + windowOpt[slot2Indices[2]] + "\n\n   Slot 3\n      Wheel type: " + wheelOpt[slot3Indices[0]] + "\n      Frame color: " + frameOpt[slot3Indices[1]] + "\n      Window shade: " + windowOpt[slot3Indices[2]]);
+        info.setVisibility(View.INVISIBLE);
     }
 
     public void openFromSlot1(View v) {
@@ -275,6 +291,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //        imageFrame.setVisibility(View.INVISIBLE);
 //        imageWindows.setVisibility(View.INVISIBLE);
 
+        updateInfo();
 
         if (pageNum == 1) {
             imageWheels.setVisibility(View.INVISIBLE);
@@ -289,7 +306,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             slot3Icon.setVisibility(View.INVISIBLE);
             slot3SaveButton.setVisibility(View.INVISIBLE);
             slot3OpenButton.setVisibility(View.INVISIBLE);
+            wheelsSpinner.setVisibility(View.INVISIBLE);
+            frameSpinner.setVisibility(View.INVISIBLE);
+            windowsSpinner.setVisibility(View.INVISIBLE);
+            wheelsSpinnerLabel.setVisibility(View.INVISIBLE);
+            frameSpinnerLabel.setVisibility(View.INVISIBLE);
+            windowsSpinnerLabel.setVisibility(View.INVISIBLE);
             info.setVisibility(View.VISIBLE);
+            road.setVisibility(View.VISIBLE);
             pageNum = 2;
         }
         else {
@@ -305,7 +329,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             slot3Icon.setVisibility(View.VISIBLE);
             slot3SaveButton.setVisibility(View.VISIBLE);
             slot3OpenButton.setVisibility(View.VISIBLE);
+            wheelsSpinner.setVisibility(View.VISIBLE);
+            frameSpinner.setVisibility(View.VISIBLE);
+            windowsSpinner.setVisibility(View.VISIBLE);
+            wheelsSpinnerLabel.setVisibility(View.VISIBLE);
+            frameSpinnerLabel.setVisibility(View.VISIBLE);
+            windowsSpinnerLabel.setVisibility(View.VISIBLE);
             info.setVisibility(View.INVISIBLE);
+            road.setVisibility(View.INVISIBLE);
             pageNum = 1;
         }
     }
